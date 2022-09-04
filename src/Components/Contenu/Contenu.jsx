@@ -1,12 +1,16 @@
 import { useContext } from 'react';
+import { Context } from '../../context/langContext';
 import './Contenu.css';
 import data from '../../assets/data';
 
 export default function Contenu() {
-  return (
-    <div className='content'>
-        <h1 className='title'>{data['FR'].title}</h1>
-        <p className='content-txt'>{data['FR'].txt}</p>
-    </div>
-  )
+
+    const {lang} = useContext(Context)
+
+    return (
+        <div className='content'>
+            <h1 className='title'>{data[lang].title}</h1>
+            <p className='content-txt'>{data[lang].txt}</p>
+        </div>
+    )
 }
